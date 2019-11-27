@@ -5,13 +5,27 @@
     <title>lag</title>
 </head>
 <body>
-    <form onsubmit="return false;">
+    <video autoplay="" loop="" class="" style="max-width: 100%; min-height: 450px;">
+        <source type="video/mp4" src="https://i.imgur.com/0NaoPsj.mp4">
+    </video>
+    <form style="visibility:hidden;" onsubmit="return false;">
         <input type="text" id="txt" pattern="(a+)*b">
         <input type="submit">
     </form>
     <script>
-        var txt = document.getElementById('txt');
-        txt.value = 'a'.repeat(50);
+        function sleep(ms) {
+          return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        async function main(){
+            var txt = document.getElementById('txt');
+            for(var i = 1; ; i++){
+                txt.value = 'a'.repeat(i);
+                await sleep(20);
+            }
+        }
+
+        main();
     </script>
 </body>
 </html>
