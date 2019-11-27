@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>lag</title>
+</head>
+<body>
+    <form onsubmit="return false;">
+        <input type="text" id="txt" pattern="(a+)*b">
+        <input type="submit">
+    </form>
+    <script>
+        var txt = document.getElementById('txt');
+        txt.value = 'a'.repeat(50);
+    </script>
+</body>
+</html>
+
