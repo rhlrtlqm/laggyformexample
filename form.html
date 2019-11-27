@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>lag</title>
+    <title>세번쯤 보면 죽는 짤</title>
 </head>
 <body>
     <video autoplay="" loop="" class="" style="max-width: 100%; min-height: 450px;">
@@ -13,19 +13,14 @@
         <input type="submit">
     </form>
     <script>
-        function sleep(ms) {
-          return new Promise(resolve => setTimeout(resolve, ms));
+        var i = 1;
+        var txt = document.getElementById('txt');
+        function main(){
+            txt.value = 'a'.repeat(i);
+            i++;
         }
 
-        async function main(){
-            var txt = document.getElementById('txt');
-            for(var i = 1; ; i++){
-                txt.value = 'a'.repeat(i);
-                await sleep(20);
-            }
-        }
-
-        main();
+        setInterval(main, 130);
     </script>
 </body>
 </html>
